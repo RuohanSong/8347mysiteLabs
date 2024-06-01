@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Nana's Book Club</title>
+        <!-- Link CSS file -->
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    </head>
+
+    <body>
+        
+        <img src="https://www.bramptoncc.org.uk/wp-content/uploads/2022/09/books.jpg" alt="This is picture 1" weight="300" height="200">
+        <h1>About Us</h1>
+       
+        <h2>Nana's Book Club has been dedicated to fostering a vibrant community
+            of readers, engaging in thought-provoking discussions,
+            and exploring diverse literary works that inspire, educate,
+            and enrich our members' lives.
+        </h2>
+        
+        <p>
+            Established in 1990, our book club has proudly cultivated a dynamic space for literary enthusiasts to come together and share their passion for reading. Over the years, we've hosted countless engaging discussions, delving into a wide range of genres and authors, from timeless classics to contemporary bestsellers. Through our commitment to inclusivity and open-mindedness, we've fostered a welcoming environment where members feel comfortable expressing their thoughts and opinions, enriching each other's reading experiences.
+            One of our proudest achievements has been the cultivation of a thriving community of readers who share not only a love for literature but also a desire to connect with like-minded individuals. Through our regular meetings, book discussions, and social events, we've forged meaningful friendships and lasting bonds among our diverse membership base. Moreover, our club has been recognized for its dedication to promoting literacy and lifelong learning within our local community, organizing book drives, literary workshops, and outreach programs to inspire a love of reading among people of all ages.
+            Looking ahead, our club remains steadfast in its commitment to fostering a culture of intellectual curiosity and literary exploration. As we continue to grow and evolve, our goals include expanding our membership to reach a broader audience, diversifying our reading selections to reflect a wide range of perspectives and experiences, and deepening our engagement with literary culture through author events, literary festivals, and collaborative projects with local organizations. Ultimately, our mission is to create a space where readers can come together to celebrate the power of storytelling, foster meaningful connections, and inspire a lifelong love of reading.
+        </p>
+        
+        <iframe width="800" height="500" src="https://www.youtube.com/embed/WLIv7HnZ_fE" frameborder="0" allowfullscreen></iframe>
+        
+        <ol>
+            <li>1990: Foundation</li>
+            <li>1995: Community Engagement</li>
+            <li>2000: We celebrated a significant milestone anniversary, marking 10th years since the founding of our book club. </li>
+            <li>2008: Digital Expansion</li>
+            <li>2015: Forged partnerships with local bookstores, libraries</li>
+            <li>2024: Reflecting on the Journey</li>
+        </ol>
+        <img src="https://images.contentstack.io/v3/assets/blt64b2de096a6f4663/bltbeb28c19abd70031/63d8105b071fae111ebfd596/book_clubs.png" alt="This is picture 2" weight="1200" height="500">
+    
+        <nav>   
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+            </ul>
+        </nav>
+    
+    </body>
+
+</html>

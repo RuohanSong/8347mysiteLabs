@@ -1,0 +1,67 @@
+/* Body styling */
+body {
+    background-color: burlywood;
+    font-family: Papyrus ;
+    color: black;
+}
+
+/* Navigation menu styling */
+nav ul {
+    background-color: navajowhite;
+    padding: 10px 0;
+}
+nav ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    justify-content: flex-end;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #272727;
+    font-family: "Adobe Arabic";
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: darkslategrey;
+    font-family: Georgia, serif;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin: 2em 0;
+}
+
+ul, ol {
+    font-family: "Brush Script MT";
+    font-size: 1.2em;
+    margin: 2em 0;
+    padding-left: 3em;
+}
+
+li {
+    color: #006b1b;
+    margin-bottom: 2em;
+}
+
+ol li:nth-child(odd) {
+    color: #264b5d;
+}
+
+
+
+
+

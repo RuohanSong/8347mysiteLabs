@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Nana's Book Club</title>
+         <!-- Link CSS file -->
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    </head>
+
+    <body>
+            
+        <h1>Nana's Book Club</h1>
+        <p>
+            Nana's Book Club is a vibrant community
+            dedicated to fostering a love for reading and literature.
+            Meeting weekly, the club offers members a platform
+            to discuss the latest bestsellers and timeless classics,
+            participate in exclusive author talks,
+            and enjoy a carefully curated monthly reading list.
+            With a rich array of activities including literary festivals,
+            themed reading challenges, and creative writing workshops,
+            the club provides a dynamic and supportive environment
+            for book enthusiasts.
+            Whether you're an aspiring author or an avid reader,
+            Nana's Book Club welcomes you to explore the world of books
+            and connect with fellow literary lovers.
+        </p>
+        <img src="https://media.npr.org/assets/img/2020/01/10/book-club-_wide-91bca7f71828ead5630585078e34a30d7e52d8e9.jpg" alt="This is picture 1" width="1000" height="500">
+        <ul>
+            <li>Nana's Book Club organizes annual literary festivals
+                that attract renowned writers from around the world.</li>
+            <li>Each year, Nana's Book Club awards scholarships
+            to students who demonstrate exceptional writing talent.</li>
+            <li>Nana's Book Club collaborates with local bookstores
+            to offer discounts and special promotions for its members.</li>
+            <li>Nana's Book Club collaborates with local bookstores
+                to offer discounts and special promotions for its members.</li>
+            <li>The club hosts regular workshops on creative writing,
+                literary analysis, and bookbinding techniques.</li>
+            <li>The club's newsletter keeps members updated
+                on upcoming events, book releases, and literary news.</li>
+        </ul>
+        <img src="https://news.miami.edu/life/_assets/images/images-stories/2021/01/book-clubs-940x529.jpg" alt="This is picture 2" width="1200" height="500">
+    
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+            </ul>
+        </nav>
+    
+    </body>
+
+</html>
