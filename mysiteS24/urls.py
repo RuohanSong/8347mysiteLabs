@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
-from myapp.views import home_view, about_view
+
+from mysiteS24.views import home_view, about_view
 
 app_name = 'myapp'
 
@@ -27,3 +30,5 @@ urlpatterns = [
     path("about/", about_view, name="about"),
     path(r'myapp/', include('myapp.urls1')),
 ]
+
+
