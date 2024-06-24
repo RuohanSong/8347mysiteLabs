@@ -22,13 +22,14 @@ from django.conf.urls.static import static
 
 from mysiteS24.views import home_view, about_view
 
-app_name = 'myapp'
+# app_name = 'myapp'
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home_view, name="home"),
-    path("about/", about_view, name="about"),
-    path(r'myapp/', include('myapp.urls1')),
+    path("homeabout/", about_view, name="home-about"),  # About page for lab3
+    # path(r'myapp/', include('myapp.urls1')),
+    path(r'myapp/', include('myapp.urls')),
 ]
 
 
