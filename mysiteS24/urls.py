@@ -27,7 +27,7 @@ from mysiteS24.views import home_view, about_view
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", home_view, name="home"),
-    path("homeabout/", about_view, name="home-about"),  # About page for lab3
+    path("about/", about_view, name="about"),  # About page for lab3
     # path(r'myapp/', include('myapp.urls1')),
     path(r'myapp/', include('myapp.urls')),
 ]

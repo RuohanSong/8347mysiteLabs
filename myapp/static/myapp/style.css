@@ -1,0 +1,60 @@
+/* Define default background color, text color, and font size for the body */
+body {
+    background-color: cornsilk; /* Default white background */
+    color: #000000; /* Default black text */
+    font-size: 16px; /* Default font size */
+    font-family: Arial, sans-serif; /* Default font family */
+}
+
+/* Define default styles for <h1> tags */
+h1 {
+    color: #000000; /* Default black text color */
+    font-size: 2em; /* Font size */
+    font-style: normal; /* Normal style */
+    position: marker; /* Default position */
+}
+
+/* Define .hbar1 class */
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
+
+/* Additional optional styles */
+h2 {
+    color: #34495e; /* Darker gray-blue text color */
+    font-size: 1.5em; /* Font size */
+    margin-bottom: 10px;
+}
+
+ol {
+    margin: 20px;
+    padding-left: 40px;
+    color: #006b1b;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: #2980b9; /* Blue link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: 20px 0;
+}
+
+strong {
+    color: #e74c3c; /* Red text color for strong elements */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
