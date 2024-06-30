@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 from myapp.models import Book, Publisher, Member, Order
-from .forms import FeedbackForm
+from .forms import FeedbackForm, SearchForm
 
 
 def index(request):
@@ -42,3 +42,29 @@ def getFeedback(request):
     else:
         form = FeedbackForm()
         return render(request, 'myapp/feedback.html', {'form': form})
+
+
+def findbooks(request):
+    if request.method == 'GET':
+        form = SearchForm(request.GET)
+        return render(request, 'myapp/findbooks.html', {'form': form})
+    elif request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            category = form.cleaned_data['category']
+            max_price = form.cleaned_data['max_price']
+
+            if category:
+                booklist = Book.objects.filter(category=category, price__lte=max_price)
+            else:
+                booklist = Book.objects.filter(price__lte=max_price)
+
+            context = {
+                'name': name,
+                'category': category,
+                'booklist': booklist
+            }
+            return render(request, 'myapp/results.html', context)
+        else:
+            return HttpResponse('Invalid data')

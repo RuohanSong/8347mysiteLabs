@@ -2,18 +2,25 @@
 
 {% block body_block %}
 
+    <h3>Hello {{ name }} !</h3>
+
+    {% if category %}
+        <h5>List of {{ form.category }} Books</h5>
+    {% else %}
+        <h5>List of books with price no more than {{ max_price }}</h5>
+    {% endif %}
+
     {% if booklist %}
-        <h2>List of Books</h2>
-        <ol>
+        <ul>
             {% for book in booklist %}
                 <li>
                     <a href="{% url 'myapp:detail' book.id %}">{{ book.title }}</a>
                 </li>
             {% endfor %}
-        </ol>
+        </ul>
 
     {% else %}
-        <strong>There are no available books!</strong>
+        <strong>There are no such books!</strong>
     {% endif %}
 
 {% endblock %}

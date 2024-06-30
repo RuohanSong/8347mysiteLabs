@@ -9,4 +9,5 @@ urlpatterns = [
     path('about/', views.about_view, name='about'),  # myapp/about page for lab 5
     path('<int:book_id>/', views.detail_view, name='detail'),
     path('feedback', views.getFeedback, name='feedback1'),
+    path('findbooks', views.findbooks, name='findbooks'),
 ]
