@@ -54,11 +54,12 @@ def findbooks(request):
             name = form.cleaned_data['name']
             category = form.cleaned_data['category']
             max_price = form.cleaned_data['max_price']
+            min_price = form.cleaned_data['min_price']
 
             if category:
-                booklist = Book.objects.filter(category=category, price__lte=max_price)
+                booklist = Book.objects.filter(category=category, price__lte=max_price, price__gte=min_price)
             else:
-                booklist = Book.objects.filter(price__lte=max_price)
+                booklist = Book.objects.filter(price__lte=max_price, price__gte=min_price)
 
             context = {
                 'name': name,
