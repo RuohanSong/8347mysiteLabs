@@ -1,0 +1,38 @@
+/* mysiteS24/myapp/static/myapp/style1.css */
+
+/* Default styles */
+body {
+    background-color: #f0f0f0; /* Default background color */
+    color: #333; /* Default text color */
+    font-size: 16px; /* Default font size */
+}
+
+/* h1 tag styles */
+h1 {
+    color: #007BFF; /* Text color for h1 */
+    font-size: 2em; /* Font size for h1 */
+    font-style: italic; /* Font style for h1 */
+    position: relative; /* Position for h1 */
+}
+
+/* Class for horizontal bar */
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
+
+/* Optional styles for other elements */
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

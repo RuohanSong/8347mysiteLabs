@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eBook App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style1.css' %}">
+</head>
+<body>
+
+    {% if booklist %}
+        <h2>List of Books</h2>
+        <ol>
+            {% for book  in booklist %}
+                <li> {{book.title}} </li>
+            {% endfor %}
+        </ol>
+
+    {% else %}
+        <strong>There are no available books!</strong>
+    {% endif %}
+    <p><a href="/myapp/about">About page</a></p>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Results</title>
+</head>
+<body>
+    <h1>Feedback Results</h1>
+    h1>Feedback Results</h1>
+    {% block body_block %}
+    <p>You have chosen to </p>
+    <ul>
+        {% for choice in choices %}
+        <li>{{ choice }}</li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+
+</body>
+</html>

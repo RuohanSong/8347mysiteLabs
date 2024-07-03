@@ -1,0 +1,17 @@
+<!-- mysiteS24/myapp/templates/myapp/detail0.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+</head>
+<body>
+    <h1>{{ book.title }}</h1>
+    <p>Price: ${{ book.price }}</p>
+    <p>Publisher: {{ book.publisher }}</p>
+
+    <!-- Link to go back to the main page -->
+    <p><a href="{% url 'myapp:index' %}">Go to Main Page</a></p>
+</body>
+</html>

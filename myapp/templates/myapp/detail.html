@@ -1,0 +1,14 @@
+<!-- mysiteS24/myapp/templates/myapp/detail.html -->
+{% extends 'myapp/base.html' %}
+
+{% block title %}
+    Book Details - {{ book.title }}
+{% endblock %}
+
+{% block body_block %}
+    <h1>{{ book.title }}</h1>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Price:</strong> ${{ book.price }}</p>
+    <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+    <!-- Add any additional information about the book as needed -->
+{% endblock %}

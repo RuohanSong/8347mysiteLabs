@@ -1,0 +1,18 @@
+<!-- Displaying list of books -->
+    {% if booklist %}
+        <h2>List of Books</h2>
+        <ol>
+            {% for book in booklist %}
+                <li>
+                    <a href="{% url 'myapp:detail' book.id %}">{{ book.title }}</a>
+                    {% if book.price %}
+                        <span style="color: green;"> - ${{ book.price }}</span>
+                    {% else %}
+                        <span style="color: red;"> - Price not available</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>No books available.</p>
+    {% endif %}

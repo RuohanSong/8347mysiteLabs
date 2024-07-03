@@ -1,0 +1,16 @@
+<!-- myapp/templates/myapp/feedback.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>
