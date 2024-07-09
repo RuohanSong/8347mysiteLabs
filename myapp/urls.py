@@ -10,4 +10,6 @@ urlpatterns = [
     path('<int:book_id>/', views.detail_view, name='detail'),
     path('feedback', views.getFeedback, name='feedback1'),
     path('findbooks', views.findbooks, name='findbooks'),
+    path('place_order', views.place_order, name='placeorder'),
+    path('review', views.review, name='review'),
 ]

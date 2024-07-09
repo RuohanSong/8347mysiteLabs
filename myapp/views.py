@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from myapp.models import Book, Publisher, Member, Order
-from .forms import FeedbackForm, SearchForm
+from .forms import FeedbackForm, SearchForm, OrderForm, ReviewForm
 
 
 def index(request):
@@ -69,3 +69,49 @@ def findbooks(request):
             return render(request, 'myapp/results.html', context)
         else:
             return HttpResponse('Invalid data')
+
+
+def place_order(request):
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.save()
+
+            books = form.cleaned_data['books']
+            order.books.set(books)
+            member = order.member
+            type = order.order_type
+            if type == 1:
+                for b in order.books.all():
+                    member.borrowed_books.add(b)
+            return render(request, 'myapp/order_response.html', {'books': books, 'order':order})
+        else:
+            return render(request, 'myapp/placeorder.html', {'form':form})
+
+    else:
+        form = OrderForm()
+        return render(request, 'myapp/placeorder.html', {'form':form})
+
+
+def review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            rating = form.cleaned_data['rating']
+            if 1 <= rating <= 5:
+                review = form.save(commit=False)
+                review.save()
+
+                book = form.cleaned_data['book']
+                book.num_reviews += 1
+                book.save()
+                return redirect('myapp:index')
+            else:
+                return render(request, 'myapp/review.html', {'form': form, 'error_message': 'You must enter a rating between 1 and 5!'})
+        else:
+            return render(request, 'myapp/review.html', {'form': form, 'error_message': 'The information you provided is invalid!'})
+    else:
+        form = ReviewForm()
+        return  render(request, 'myapp/review.html', {'form': form})
+
