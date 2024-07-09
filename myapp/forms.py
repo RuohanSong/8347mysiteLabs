@@ -6,7 +6,7 @@ class FeedbackForm(forms.Form):
         ('B', 'Borrow'),
         ('P', 'Purchase'),
     ]
-    feedback = forms.ChoiceField(choices=FEEDBACK_CHOICES)
+    feedback = forms.MultipleChoiceField(choices=FEEDBACK_CHOICES, widget=forms.CheckboxSelectMultiple())
 
 class SearchForm(forms.Form):
     CATEGORY_CHOICES = [

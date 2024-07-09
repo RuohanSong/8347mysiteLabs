@@ -29,14 +29,8 @@ def getFeedback(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
-            feedback = form.cleaned_data['feedback']
-            if feedback == 'B':
-                choice = ' to borrow books.'
-            elif feedback == 'P':
-                choice = ' to purchase books.'
-            else:
-                choice = ' None.'
-            return render(request, 'myapp/fb_results.html', {'choice': choice})
+            feedbacks = form.cleaned_data['feedback']
+            return render(request, 'myapp/fb_results.html', {'feedbacks': feedbacks})
         else:
             return HttpResponse('Invalid data')
     else:
