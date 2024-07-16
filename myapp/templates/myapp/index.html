@@ -1,21 +1,30 @@
 {% extends 'myapp/base.html' %}
 
 {% block body_block %}
-
-    {% if booklist %}
-        <h2>List of Books</h2>
-        <ol>
-            {% for book in booklist %}
-                <li>
-                    <a href="{% url 'myapp:detail' book.id %}">{{ book.title }}</a>
-                </li>
-            {% endfor %}
-        </ol>
-
-    {% else %}
-        <strong>There are no available books!</strong>
+<div class="container mt-4">
+    {% if message %}
+    <div class="alert alert-info" role="alert">
+        {{ message }}
+    </div>
     {% endif %}
 
-    <a href="{% url 'myapp:placeorder' %}">Place an order</a>
+    {% if booklist %}
+    <h2 class="text-center">List of Books</h2>
+    <ul class="list-group">
+        {% for book in booklist %}
+        <li class="list-group-item">
+            <a href="{% url 'myapp:detail' book.id %}">{{ book.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+        <strong>There are no available books!</strong>
+    </div>
+    {% endif %}
 
+    <div class="mt-4 text-center">
+        <a href="{% url 'myapp:placeorder' %}" class="btn btn-primary">Place an order</a>
+    </div>
+</div>
 {% endblock %}

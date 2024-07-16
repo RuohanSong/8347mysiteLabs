@@ -1,9 +1,17 @@
 /* Define default background color, text color, and font size for the body */
 body {
-    background-color: cornsilk; /* Default white background */
+    background-color: white;
     color: #000000; /* Default black text */
     font-size: 16px; /* Default font size */
     font-family: Arial, sans-serif; /* Default font family */
+}
+
+html, body {
+    height: 100%;
+}
+
+.row {
+    --bs-gutter-x: 0;
 }
 
 /* Define default styles for <h1> tags */
@@ -57,4 +65,11 @@ strong {
 ul {
     list-style-type: disc;
     padding-left: 40px;
+}
+
+.hstack  {
+    background-color: #e0e0e0;
+    height: 200px;
+    margin-bottom: 0;
+    display: flex;
 }

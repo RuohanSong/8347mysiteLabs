@@ -1,18 +1,25 @@
+<!-- myapp/templates/myapp/feedback.html -->
 {% extends 'myapp/base.html' %}
 
 {% block body_block %}
-
+<div class="container mt-5">
     {% if feedbacks %}
-        <h2>Choices:</h2>
-        <ul>
-            {% for feedback in feedbacks %}
-                <li>
-                   {{ feedback }}
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title">Choices</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for feedback in feedbacks %}
+                        <li class="list-group-item">{{ feedback }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     {% else %}
-        <strong>No feedback selected!</strong>
+        <div class="alert alert-warning" role="alert">
+            <strong>No feedback selected!</strong>
+        </div>
     {% endif %}
-
+</div>
 {% endblock %}

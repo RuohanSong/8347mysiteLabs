@@ -1,10 +1,13 @@
+<!-- myapp/templates/myapp/findbooks.html -->
 {% extends 'myapp/base.html' %}
 
 {% block body_block %}
-    <form action="{% url 'myapp:findbooks' %}" method="post">
+<div class="container mt-5">
+    <form action="{% url 'myapp:findbooks' %}" method="post" class="needs-validation" novalidate>
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" name="submit1" value="Find Books" />
+        {{ form.as_div }}
+        <button type="submit" name="submit1" class="btn btn-primary">Find Books</button>
     </form>
+</div>
 
 {% endblock %}

@@ -1,26 +1,30 @@
+<!-- myapp/templates/myapp/result.html -->
 {% extends 'myapp/base.html' %}
 
 {% block body_block %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Hello {{ name }}!</h3>
 
-    <h3>Hello {{ name }} !</h3>
+            {% if category %}
+                <h5>List of Books</h5>
+            {% else %}
+                <h5>List of Books with Price No More Than ${{ max_price }}</h5>
+            {% endif %}
 
-    {% if category %}
-        <h5>List of Books</h5>
-    {% else %}
-        <h5>List of books with price no more than {{ max_price }}</h5>
-    {% endif %}
-
-    {% if booklist %}
-        <ul>
-            {% for book in booklist %}
-                <li>
-                    <a href="{% url 'myapp:detail' book.id %}">{{ book.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-
-    {% else %}
-        <strong>There are no such books!</strong>
-    {% endif %}
-
+            {% if booklist %}
+                <ul class="list-group">
+                    {% for book in booklist %}
+                        <li class="list-group-item">
+                            <a href="{% url 'myapp:detail' book.id %}">{{ book.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="mt-3"><strong>There are no such books!</strong></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}

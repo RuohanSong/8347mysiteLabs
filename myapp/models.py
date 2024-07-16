@@ -1,6 +1,6 @@
 from django.db import models
 import datetime
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser, User
 from django.utils import timezone
 
 
@@ -36,7 +36,7 @@ class Book(models.Model):
         return self.title
 
 
-class Member(User):
+class Member(AbstractUser):
     STATUS_CHOICES = [
         (1, 'Regular Member'),
         (2, 'Premium Member'),
